@@ -60,6 +60,22 @@ inoremap <C-W> <C-G>u<C-W>
 " Select all and copy
 map <Leader>a ggVG"+y
 
+"Toggle max/restore current window
+map <C-M> :call ToggleMaxWin()<cr> 
+
+"Switch between windows
+nmap <C-K> <C-W><Up>
+nmap <C-J> <C-W><Down>
+nmap <C-H> <C-W><Left>
+nmap <C-L> <C-W><Right>
+
+"Resize current window
+nmap <C-Up> <C-W>+
+nmap <C-Down> <C-W>-
+nmap <C-Left> <C-W><
+nmap <C-Right> <C-W>>
+
+
 " Classical Copy/Cut/Paste
 "
 " I do not use these mappings, but I leave them here in case

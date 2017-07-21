@@ -10,8 +10,11 @@
 
 " ## Generic Settings
 "
+"
+"in windows it is source this vim file in ~/AppData/Local/nvim/init.vim
+"
 " Set vim directory path
-let $VIMPATH=$HOME."~/.config/nvim"
+let $VIMPATH=$HOME."\\dd-vim"
 
 " Disable backup
 set nobackup
@@ -128,3 +131,7 @@ augroup END
 
 " Set indentation
 autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
+
+let g:python3_host_prog='C:\Users\h0136351\AppData\Local\Programs\Python\Python36-32\python.exe'
+
+source $VIMPATH/maxwindow.vim
