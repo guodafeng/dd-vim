@@ -174,6 +174,12 @@ Plug 'pearofducks/ansible-vim'
 "
 Plug 'ledger/vim-ledger'
 
+" Python autocomplete
+Plug 'davidhalter/jedi-vim'
+
+" Python pip8
+Plug 'nvie/vim-flake8'
+
 " GPG support
 " This is not working yet in neovim,
 " see https://github.com/jamessan/vim-gnupg/issues/32

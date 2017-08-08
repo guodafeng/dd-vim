@@ -132,6 +132,7 @@ augroup END
 " Set indentation
 autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
+"python env required by YCM ....
 let g:python3_host_prog='C:\Users\h0136351\AppData\Local\Programs\Python\Python36-32\python.exe'
 
 source $VIMPATH/maxwindow.vim
