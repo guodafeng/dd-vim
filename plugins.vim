@@ -12,7 +12,7 @@
 "
 " Plugins are managed by vim-plug, make sure you use single quotes.
 
-call plug#begin('"~/.config/nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 " NERDTree: directory tree viewer
 "
@@ -180,6 +180,8 @@ Plug 'davidhalter/jedi-vim'
 " Python pip8
 Plug 'nvie/vim-flake8'
 
+" open external file types
+Plug 'ivalkeen/nerdtree-execute'
 " GPG support
 " This is not working yet in neovim,
 " see https://github.com/jamessan/vim-gnupg/issues/32
