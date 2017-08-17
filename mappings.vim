@@ -62,7 +62,7 @@ inoremap <C-W> <C-G>u<C-W>
 map <Leader>a ggVG"+y
 
 "Toggle max/restore current window
-map <C-M> :call ToggleMaxWin()<cr> 
+map <F12> :call ToggleMaxWin()<CR> 
 
 "Switch between windows
 nmap <C-K> <C-W><Up>
@@ -90,7 +90,7 @@ func! CompileRunGcc()
         exec "!javac %" 
         exec "!java %<"
     elseif &filetype == 'python'
-        exec "!python %"
+        exec "!python3 %"
         "call SaveAndExecutePython()
     elseif &filetype == 'sh'
         :!./%
@@ -150,8 +150,10 @@ function! SaveAndExecutePython()
     setlocal nomodifiable
 endfunction
 
-"go to frequently used working dir
-nmap <C-1> :cd d:\yunfeng\dev<CR>
+"buffer switch 
+nmap <C-N> :bn<CR>
+nmap <C-P> :bp<CR>
+nmap <F3> :b#<CR>
 
 " Classical Copy/Cut/Paste
 "
