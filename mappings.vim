@@ -155,6 +155,12 @@ nmap <C-N> :bn<CR>
 nmap <C-P> :bp<CR>
 nmap <F3> :b#<CR>
 
+"Nvim Terminal key map
+tnoremap <Esc> <C-\><C-N>
+
+vmap <C-C> "+y
+nmap <S-Insert> "+p
+imap <S-Insert> <Esc>"+pa
 " Classical Copy/Cut/Paste
 "
 " I do not use these mappings, but I leave them here in case
@@ -170,7 +176,7 @@ nmap <F3> :b#<CR>
 ""<Ctrl-C> -- copy (goto visual mode and copy)
 "
 "imap <C-C> <C-O>vgG
-"vmap <C-C> "*y<Esc>i
+"vmap <C-C> "+y<Esc>i
 "imap <C-Insert> <C-O>vgG
 "vmap <C-Insert> "*y<Esc>i
 "
