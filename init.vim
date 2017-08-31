@@ -14,7 +14,7 @@
 "in windows it is source this vim file in ~/AppData/Local/nvim/init.vim
 "
 " Set vim directory path
-let $VIMPATH=$HOME."\\dd-vim"
+let $VIMPATH=$HOME."/.config/nvim/dd-vim"
 
 " Disable backup
 set nobackup
@@ -85,7 +85,8 @@ colorscheme desert
 set textwidth=72
 
 " Automatic Indentation
-set smartindent
+" set smartindent " remove this line as it caused comment indent problem
+  set autoindent
 
 " Tabs settings
 "set noexpandtab (better for Golang code, this is the default in neovim)
