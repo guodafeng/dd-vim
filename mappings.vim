@@ -55,8 +55,9 @@ map <Leader>i kJi<Return><ESC>j
 
 " Recover from accidental Ctrl-U/Ctrl-W deletions,
 " see http://vim.wikia.com/wiki/Recover_from_accidental_Ctrl-U
-inoremap <C-U> <C-G>u<C-U>
-inoremap <C-W> <C-G>u<C-W>
+" it seems to not useful for me, gavin
+"inoremap <C-U> <C-G>u<C-U>
+"inoremap <C-W> <C-G>u<C-W>
 
 " Select all and copy
 map <Leader>a ggVG"+y
@@ -65,16 +66,30 @@ map <Leader>a ggVG"+y
 map <F12> :call ToggleMaxWin()<CR> 
 
 "Switch between windows
-nmap <C-K> <C-W><Up>
-nmap <C-J> <C-W><Down>
-nmap <C-H> <C-W><Left>
-nmap <C-L> <C-W><Right>
+tnoremap <A-h> <C-\><C-N><C-w>h
+tnoremap <A-j> <C-\><C-N><C-w>j
+tnoremap <A-k> <C-\><C-N><C-w>k
+tnoremap <A-l> <C-\><C-N><C-w>l
+inoremap <A-h> <C-\><C-N><C-w>h
+inoremap <A-j> <C-\><C-N><C-w>j
+inoremap <A-k> <C-\><C-N><C-w>k
+inoremap <A-l> <C-\><C-N><C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
 
 "Resize current window
 nmap <C-Up> <C-W>+
 nmap <C-Down> <C-W>-
 nmap <C-Left> <C-W><
 nmap <C-Right> <C-W>>
+
+"close current buffer without close window
+map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
+
+"using kk to escape insertmode
+imap kk <Esc>
 
 "F5 to run code, & is to use local variable
 map <F5> :call CompileRunGcc()<CR>
