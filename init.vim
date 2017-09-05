@@ -86,6 +86,7 @@ set textwidth=72
 
 " Automatic Indentation
 " set smartindent " remove this line as it caused comment indent problem
+  set nosmartindent
   set autoindent
 
 " Tabs settings
