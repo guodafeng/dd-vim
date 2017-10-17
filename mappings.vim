@@ -66,10 +66,6 @@ map <Leader>a ggVG"+y
 map <F12> :call ToggleMaxWin()<CR> 
 
 "Switch between windows
-tnoremap <A-h> <C-\><C-N><C-w>h
-tnoremap <A-j> <C-\><C-N><C-w>j
-tnoremap <A-k> <C-\><C-N><C-w>k
-tnoremap <A-l> <C-\><C-N><C-w>l
 inoremap <A-h> <C-\><C-N><C-w>h
 inoremap <A-j> <C-\><C-N><C-w>j
 inoremap <A-k> <C-\><C-N><C-w>k
@@ -78,6 +74,12 @@ nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
+"vim in terminal cannot use alt as it will open the termianl menu
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 
 "Resize current window
 nmap <C-Up> <C-W>+
@@ -115,9 +117,6 @@ nmap <F3> :b#<CR>
 "close current buffer without close window
 map <leader>q :b#<bar>sp<bar>b#<bar>bd<CR>
 
-
-"Nvim Terminal key map
-tnoremap <Esc> <C-\><C-N>
 
 vmap <C-C> "+y
 nmap <S-Insert> "+p

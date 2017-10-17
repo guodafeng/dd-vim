@@ -16,6 +16,11 @@
 " Set vim directory path
 let $VIMPATH=$HOME."/.config/nvim/dd-vim"
 
+" set different cursor in insert/normalmode
+let &t_SI = "\<esc>[5 q"
+let &t_SR = "\<esc>[5 q"
+let &t_EI = "\<esc>[2 q"
+
 " set file coding to display chinese
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,gbk,big5,gb18030,utf-16,latin1
@@ -48,7 +53,7 @@ set nrformats-=octal
 " ## Vim UI
 "
 " Terminator colors
-set termguicolors
+"set termguicolors
 
 " Line numbers
 set number
