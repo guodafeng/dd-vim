@@ -16,6 +16,10 @@
 " Set vim directory path
 let $VIMPATH=$HOME."/.config/nvim/dd-vim"
 
+" set file coding to display chinese
+set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,gbk,big5,gb18030,utf-16,latin1
+
 " Disable backup
 set nobackup
 
@@ -135,6 +139,10 @@ augroup END
 autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 "python env required by YCM ....
-let g:python3_host_prog='C:\Users\h0136351\AppData\Local\Programs\Python\Python36-32\python.exe'
+let g:python3_host_prog='/usr/bin/python3'
+let g:ycm_global_ycm_extra_conf = '/home/yunfeng/.config/nvim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+
+"C++ build
+:set makeprg=g++\ -std=c++14\ %
 
 source $VIMPATH/maxwindow.vim

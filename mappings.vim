@@ -85,9 +85,6 @@ nmap <C-Down> <C-W>-
 nmap <C-Left> <C-W><
 nmap <C-Right> <C-W>>
 
-"close current buffer without close window
-map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
-
 "using kk to escape insertmode
 imap kk <Esc>
 
@@ -106,69 +103,18 @@ func! CompileRunGcc()
         exec "!java %<"
     elseif &filetype == 'python'
         exec "!python3 %"
-        "call SaveAndExecutePython()
     elseif &filetype == 'sh'
         :!./%
     endif
 endfunc
 
-function! SaveAndExecutePython()
-    " SOURCE [reusable window]: https://github.com/fatih/vim-go/blob/master/autoload/go/ui.vim
-
-    " save and reload the current file
-    silent execute "update | edit"
-
-    " get file path of current file
-    let s:current_buffer_file_path = expand("%")
-
-    let s:output_buffer_name = "Python"
-    let s:output_buffer_filetype = "output"
-
-    " reuse existing buffer window if it exists otherwise create a new one
-    if !exists("s:buf_nr") || !bufexists(s:buf_nr)
-        silent execute 'botright new ' . s:output_buffer_name
-        let s:buf_nr = bufnr('%')
-    elseif bufwinnr(s:buf_nr) == -1
-        silent execute 'botright new'
-        silent execute s:buf_nr . 'buffer'
-    elseif bufwinnr(s:buf_nr) != bufwinnr('%')
-        silent execute bufwinnr(s:buf_nr) . 'wincmd w'
-    endif
-
-    silent execute "setlocal filetype=" . s:output_buffer_filetype
-    setlocal bufhidden=delete
-    setlocal buftype=nofile
-    setlocal noswapfile
-    setlocal nobuflisted
-    setlocal winfixheight
-    setlocal cursorline " make it easy to distinguish
-    setlocal nonumber
-    setlocal norelativenumber
-    setlocal showbreak=""
-
-    " clear the buffer
-    setlocal noreadonly
-    setlocal modifiable
-    %delete _
-
-    " add the console output
-    silent execute ".!python " . shellescape(s:current_buffer_file_path, 1)
-
-    " resize window to content length
-    " Note: This is annoying because if you print a lot of lines then your code buffer is forced to a height of one line every time you run this function.
-    "       However without this line the buffer starts off as a default size and if you resize the buffer then it keeps that custom size after repeated runs of this function.
-    "       But if you close the output buffer then it returns to using the default size when its recreated
-    "execute 'resize' . line('$')
-
-    " make the buffer non modifiable
-    setlocal readonly
-    setlocal nomodifiable
-endfunction
-
 "buffer switch 
 nmap <C-N> :bn<CR>
 nmap <C-P> :bp<CR>
 nmap <F3> :b#<CR>
+"close current buffer without close window
+map <leader>q :b#<bar>sp<bar>b#<bar>bd<CR>
+
 
 "Nvim Terminal key map
 tnoremap <Esc> <C-\><C-N>
