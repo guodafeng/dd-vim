@@ -66,14 +66,10 @@ map <Leader>a ggVG"+y
 map <F12> :call ToggleMaxWin()<CR> 
 
 "Switch between windows
-inoremap <A-h> <C-\><C-N><C-w>h
-inoremap <A-j> <C-\><C-N><C-w>j
-inoremap <A-k> <C-\><C-N><C-w>k
-inoremap <A-l> <C-\><C-N><C-w>l
-nnoremap <A-h> <C-w>h
-nnoremap <A-j> <C-w>j
-nnoremap <A-k> <C-w>k
-nnoremap <A-l> <C-w>l
+inoremap <c-h> <C-\><C-N><C-w>h
+inoremap <c-j> <C-\><C-N><C-w>j
+inoremap <c-k> <C-\><C-N><C-w>k
+inoremap <c-l> <C-\><C-N><C-w>l
 "vim in terminal cannot use alt as it will open the termianl menu
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -90,6 +86,18 @@ nmap <C-Right> <C-W>>
 "using kk to escape insertmode
 imap kk <Esc>
 
+command! -complete=file -nargs=+ Shell call s:runshellcommand(<q-args>)
+function! s:runshellcommand(cmdline)
+  botright new
+  setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
+  call setline(1,a:cmdline)
+  call setline(2,substitute(a:cmdline,'.','=','g'))
+  execute 'silent $read !'.escape(a:cmdline,'%#')
+  setlocal nomodifiable
+  1
+endfunction
+map <F9> :w \| Shell python3 %<cr><c-w>
+
 "F5 to run code, & is to use local variable
 map <F5> :call CompileRunGcc()<CR>
 func! CompileRunGcc()
@@ -103,8 +111,6 @@ func! CompileRunGcc()
     elseif &filetype == 'java' 
         exec "!javac %" 
         exec "!java %<"
-    elseif &filetype == 'python'
-        exec "!python3 %"
     elseif &filetype == 'sh'
         :!./%
     endif
@@ -121,6 +127,8 @@ map <leader>q :b#<bar>sp<bar>b#<bar>bd<CR>
 vmap <C-C> "+y
 nmap <S-Insert> "+p
 imap <S-Insert> <Esc>"+pa
+
+
 " Classical Copy/Cut/Paste
 "
 " I do not use these mappings, but I leave them here in case
