@@ -96,7 +96,7 @@ function! s:runshellcommand(cmdline)
   setlocal nomodifiable
   1
 endfunction
-map <F9> :w \| Shell python3 %<cr><c-w>
+map <F6> :w \| Shell python3 %<cr><c-w>
 
 "F5 to run code, & is to use local variable
 map <F5> :call CompileRunGcc()<CR>
@@ -111,6 +111,8 @@ func! CompileRunGcc()
     elseif &filetype == 'java' 
         exec "!javac %" 
         exec "!java %<"
+    elseif &filetype == 'python'
+        exec "!python3 %"
     elseif &filetype == 'sh'
         :!./%
     endif
