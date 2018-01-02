@@ -2,9 +2,9 @@
 tnoremap <Esc> <C-\><C-N>
 
 "Switch between windows
-tnoremap <A-h> <C-\><C-N><C-w>h
-tnoremap <A-j> <C-\><C-N><C-w>j
-tnoremap <A-k> <C-\><C-N><C-w>k
-tnoremap <A-l> <C-\><C-N><C-w>l
+tnoremap <c-h> <C-\><C-N><C-w>h
+tnoremap <c-j> <C-\><C-N><C-w>j
+tnoremap <c-k> <C-\><C-N><C-w>k
+tnoremap <c-l> <C-\><C-N><C-w>l
 
 

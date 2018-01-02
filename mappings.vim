@@ -96,12 +96,12 @@ function! s:runshellcommand(cmdline)
   setlocal nomodifiable
   1
 endfunction
-map <F6> :w \| Shell python3 %<cr><c-w>
+map <F6> :up \| Shell python3 %<cr><c-w>
 
 "F5 to run code, & is to use local variable
 map <F5> :call CompileRunGcc()<CR>
 func! CompileRunGcc()
-    exec "w"
+    exec "update"
     if &filetype == 'c'
         exec "!g++ % -o %<"
         exec "! ./%<"
@@ -121,7 +121,7 @@ endfunc
 "buffer switch 
 nmap <C-N> :bn<CR>
 nmap <C-P> :bp<CR>
-nmap <F3> :b#<CR>
+nmap <F3> :up \| b#<CR>
 "close current buffer without close window
 map <leader>q :b#<bar>sp<bar>b#<bar>bd<CR>
 
