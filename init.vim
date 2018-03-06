@@ -23,7 +23,9 @@ let &t_EI = "\<esc>[2 q"
 
 " set file coding to display chinese
 set encoding=utf-8
-set fileencodings=ucs-bom,utf-8,gbk,big5,gb18030,utf-16,latin1
+" used for chinese encoding when need
+"set fileencodings=utf-8,gucs-bom,bk,big5,gb18030,utf-16,latin1
+set fileencodings=utf-8
 
 " Disable backup
 set nobackup

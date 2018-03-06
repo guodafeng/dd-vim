@@ -35,6 +35,10 @@
 " Map Leader key
 let mapleader = ","
 
+" Copy the current file path to register a
+map <Leader>p :let @a=expand("%")<CR>
+map <Leader>P :let @a=expand("%:h")<CR>
+
 " Insert the current date
 map <Leader>d :read !date --rfc-3339=date<CR>kJ$
 map <Leader>D :read !date -R<CR>kJ
