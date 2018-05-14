@@ -35,6 +35,20 @@
 " Map Leader key
 let mapleader = ","
 
+" Select All
+map <Leader>A ggVG
+" Select all and copy
+map <Leader>a ggVG"+y
+
+" Copy to system clipboard
+map <Leader>c "+y
+
+" paste from system clipboard
+map <Leader>v "+p
+
+" switch tab key, F26=ctrl + F2
+map <F2> <C-\><C-N>gt
+map <F26> <C-\><C-N>gT
 " Copy the current file path to register a
 map <Leader>p :let @a=expand("%")<CR>
 map <Leader>P :let @a=expand("%:h")<CR>
@@ -62,9 +76,6 @@ map <Leader>i kJi<Return><ESC>j
 " it seems to not useful for me, gavin
 "inoremap <C-U> <C-G>u<C-U>
 "inoremap <C-W> <C-G>u<C-W>
-
-" Select all and copy
-map <Leader>a ggVG"+y
 
 "Toggle max/restore current window
 map <F12> :call ToggleMaxWin()<CR> 
