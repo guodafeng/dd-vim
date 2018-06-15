@@ -24,8 +24,8 @@ let &t_EI = "\<esc>[2 q"
 " set file coding to display chinese
 set encoding=utf-8
 " used for chinese encoding when need
-"set fileencodings=utf-8,gucs-bom,bk,big5,gb18030,utf-16,latin1
-set fileencodings=utf-8
+set fileencodings=utf-8,utf-16le,gucs-bom,bk,big5,gb18030,utf-16,latin1
+"set fileencodings=utf-8
 
 " Disable backup
 set nobackup
@@ -144,6 +144,7 @@ augroup END
 
 " Set indentation
 autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd Filetype javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 "python env required by YCM ....
 let g:python3_host_prog='/usr/bin/python3'
