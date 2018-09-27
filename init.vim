@@ -14,7 +14,7 @@
 "in windows it is source this vim file in ~/AppData/Local/nvim/init.vim
 "
 " Set vim directory path
-let $VIMPATH=$HOME."/.config/nvim/dd-vim"
+let $VIMPATH="~/dd-vim"
 
 " set different cursor in insert/normalmode
 let &t_SI = "\<esc>[5 q"
@@ -25,7 +25,6 @@ let &t_EI = "\<esc>[2 q"
 set encoding=utf-8
 " used for chinese encoding when need
 set fileencodings=utf-8,iso-8859-1,utf-16le,gucs-bom,bk,big5,gb18030,utf-16,latin1
-"set fileencodings=utf-8
 
 " Disable backup
 set nobackup
@@ -147,10 +146,10 @@ autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
 autocmd Filetype javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 "python env required by YCM ....
-let g:python3_host_prog='/usr/bin/python3'
+" let g:python3_host_prog='/usr/bin/python3'
+let g:python3_host_prog='C:\Users\h0136351\AppData\Local\Programs\Python\Python36-32\python.exe'
 let g:ycm_global_ycm_extra_conf = '/home/yunfeng/.config/nvim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 "C++ build
 :set makeprg=g++\ -std=c++14\ %
 
-source $VIMPATH/maxwindow.vim
