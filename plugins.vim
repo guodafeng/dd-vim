@@ -88,7 +88,7 @@ let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = {
 	\ "mode": "active",
     \ "active_filetypes": ["py", "go"],
-	\ "passive_filetypes": [] }
+	\ "passive_filetypes": ["js"] }
 "
 map <Leader>s :SyntasticCheck <CR>
 map <Leader>t :SyntasticToggleMode <CR>

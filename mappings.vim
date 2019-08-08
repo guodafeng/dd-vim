@@ -111,7 +111,7 @@ function! s:runshellcommand(cmdline)
   setlocal nomodifiable
   1
 endfunction
-map <F6> :up \| Shell python3 %<cr><c-w>
+map <F6> :up \| Shell python3 %<cr>
 
 "F5 to run code, & is to use local variable
 map <F5> :call CompileRunGcc()<CR>
