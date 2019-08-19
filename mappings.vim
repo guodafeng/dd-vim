@@ -121,7 +121,7 @@ func! CompileRunGcc()
         exec "!g++ % -o %<"
         exec "! ./%<"
     elseif &filetype == 'cpp'
-        exec "!g++ % -o %<"
+        exec "!g++ % -o %< -std=gnu++14"
         exec "! ./%<"
     elseif &filetype == 'java' 
         exec "!javac %" 
