@@ -14,7 +14,7 @@
 "in windows it is source this vim file in ~/AppData/Local/nvim/init.vim
 "
 " Set vim directory path
-let $VIMPATH=$HOME."/.config/nvim/dd-vim"
+let $VIMPATH=$HOME."/dev/dd-vim/dd-vim"
 
 " set different cursor in insert/normalmode
 let &t_SI = "\<esc>[5 q"
@@ -120,6 +120,7 @@ endif
 " ## Key Mappings
 "
 source $VIMPATH/mappings.vim
+source $VIMPATH/mappings_nvim.vim
 
 " Time out on :mappings and key codes
 set ttimeout
