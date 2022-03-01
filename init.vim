@@ -147,10 +147,26 @@ autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
 autocmd Filetype javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 "python env required by YCM ....
-let g:python3_host_prog='/usr/bin/python3'
+"let g:python3_host_prog='/usr/bin/python3'
+let g:python3_host_prog='C:\Users\yunfeng\AppData\Local\Programs\Python\Python36-32\python.exe'
+let g:python_host_prog='C:\Users\yunfeng\AppData\Local\Programs\Python\Python36-32\python.exe'
 let g:ycm_global_ycm_extra_conf = '/home/yunfeng/.config/nvim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 "C++ build
 :set makeprg=g++\ -std=c++14\ %
+
+"font size adjust key mapping
+let s:fontsize = 12
+function! AdjustFontSize(amount)
+  let s:fontsize = s:fontsize+a:amount
+  :execute "GuiFont! Consolas:h" . s:fontsize
+endfunction
+" In normal mode, pressing numpad's+ increases the font
+noremap <kPlus> :call AdjustFontSize(1)<CR>
+noremap <kMinus> :call AdjustFontSize(-1)<CR>
+
+" In insert mode, pressing ctrl + numpad's+ increases the font
+inoremap <C-kPlus> <Esc>:call AdjustFontSize(1)<CR>a
+inoremap <C-kMinus> <Esc>:call AdjustFontSize(-1)<CR>a
 
 source $VIMPATH/maxwindow.vim
