@@ -178,7 +178,7 @@ Plug 'ledger/vim-ledger'
 Plug 'davidhalter/jedi-vim'
 
 " Python pip8
-Plug 'nvie/vim-flake8'
+"Plug 'nvie/vim-flake8'
 
 " open external file types
 Plug 'ivalkeen/nerdtree-execute'
@@ -186,6 +186,9 @@ Plug 'ivalkeen/nerdtree-execute'
 " This is not working yet in neovim,
 " see https://github.com/jamessan/vim-gnupg/issues/32
 "Plug 'jamessan/vim-gnupg'
+"
+" buffer explorer
+Plug 'jlanzarotta/bufexplorer'
 
 " Add plugins to &runtimepath
 call plug#end()
