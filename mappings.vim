@@ -49,9 +49,9 @@ map <Leader>v "+p
 " switch tab key, F26=ctrl + F2
 map <F2> <C-\><C-N>gt
 map <F26> <C-\><C-N>gT
-" Copy the current file path to register a
-map <Leader>p :let @a=expand("%")<CR>
-map <Leader>P :let @a=expand("%:h")<CR>
+" Copy the current file path to register + (system clipboard)
+map <Leader>p :let @+=expand("%")<CR>
+map <Leader>P :let @+=expand("%:h")<CR>
 
 " Insert the current date
 map <Leader>d :read !date --rfc-3339=date<CR>kJ$
@@ -98,8 +98,8 @@ nmap <C-Down> <C-W>-
 nmap <C-Left> <C-W><
 nmap <C-Right> <C-W>>
 
-"using kk to escape insertmode
-imap kk <Esc>
+"using jj to escape insertmode
+imap jj <Esc>
 
 command! -complete=file -nargs=+ Shell call s:runshellcommand(<q-args>)
 function! s:runshellcommand(cmdline)
