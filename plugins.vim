@@ -190,5 +190,8 @@ Plug 'ivalkeen/nerdtree-execute'
 " buffer explorer
 Plug 'jlanzarotta/bufexplorer'
 
+Plug 'godlygeek/tabular' "必要插件，安装在vim-markdown前面
+Plug 'plasticboy/vim-markdown'
+
 " Add plugins to &runtimepath
 call plug#end()

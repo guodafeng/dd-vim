@@ -14,7 +14,8 @@
 "in windows it is source this vim file in ~/AppData/Local/nvim/init.vim
 "
 " Set vim directory path
-let $VIMPATH=$HOME."/dev/dd-vim/dd-vim"
+" in windows softlink /appdata/local/nvim to dd-vim, then nvim works
+let $VIMPATH=$HOME."/appdata/local/nvim"
 
 " set different cursor in insert/normalmode
 let &t_SI = "\<esc>[5 q"
@@ -24,7 +25,7 @@ let &t_EI = "\<esc>[2 q"
 " set file coding to display chinese
 set encoding=utf-8
 " used for chinese encoding when need
-set fileencodings=utf-8,iso-8859-1,utf-16le,gucs-bom,bk,big5,gb18030,utf-16,latin1
+set fileencodings=utf-8,cp936,iso-8859-1,utf-16le,gucs-bom,bk,big5,gb18030,utf-16,latin1
 "set fileencodings=utf-8
 
 " Disable backup
@@ -149,13 +150,14 @@ autocmd Filetype javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 "python env required by YCM ....
 "let g:python3_host_prog='/usr/bin/python3'
-let g:python3_host_prog='C:\Users\yunfeng\AppData\Local\Programs\Python\Python36-32\python.exe'
-let g:python_host_prog='C:\Users\yunfeng\AppData\Local\Programs\Python\Python36-32\python.exe'
+let g:python3_host_prog='C:\Users\Administrator\AppData\Local\Programs\Python\Python310\python.exe'
+let g:python_host_prog='C:\Users\Administrator\AppData\Local\Programs\Python\Python310\python.exe'
 let g:ycm_global_ycm_extra_conf = '/home/yunfeng/.config/nvim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 "C++ build
 :set makeprg=g++\ -std=c++14\ %
 
+:set grepprg=grep
 "font size adjust key mapping
 let s:fontsize = 12
 function! AdjustFontSize(amount)
@@ -171,3 +173,4 @@ inoremap <C-kPlus> <Esc>:call AdjustFontSize(1)<CR>a
 inoremap <C-kMinus> <Esc>:call AdjustFontSize(-1)<CR>a
 
 source $VIMPATH/maxwindow.vim
+:cd e:\dev
