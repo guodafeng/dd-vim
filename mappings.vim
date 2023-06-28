@@ -145,6 +145,8 @@ vmap <C-C> "+y
 nmap <S-Insert> "+p
 imap <S-Insert> <Esc>"+pa
 
+" cd to current file path
+nmap <C-S> :cd %:h \| pwd<CR>
 
 " Classical Copy/Cut/Paste
 "
